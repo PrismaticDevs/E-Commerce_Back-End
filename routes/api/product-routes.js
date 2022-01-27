@@ -110,7 +110,7 @@ router.delete('/:id', (req, res) => {
             where: { id: req.params.id }
         })
         .then(data => {
-            res.json('Product deleted');
+            res.json(req.params.product_id, ' deleted');
         })
 });
 
