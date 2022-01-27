@@ -8,13 +8,26 @@ const path = require('path');
 router.get('/', (req, res) => {
     // find all products
     // be sure to include its associated Category and Tag data
-    res.sendFile(path.join(__dirname, '../../public/html/products.html'));
+    Product.findAll({
+            include: [
+                { model: Category },
+                { model: Tag },
+            ]
+        })
+        .then((data) => {
+            res.json(data)
+        });
 });
 
 // get one product
 router.get('/:id', (req, res) => {
     // find a single product by its `id`
     // be sure to include its associated Category and Tag data
+    const id = req.params.id;
+    Product.findByPk(id)
+        .then((data) => {
+            res.json(data)
+        });
 });
 
 // create new product
@@ -93,6 +106,12 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     // delete one product by its `id` value
+    Product.destroy({
+            where: { id: req.params.id }
+        })
+        .then(data => {
+            res.json('Product deleted');
+        })
 });
 
 module.exports = router;
