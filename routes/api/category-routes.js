@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
     Category.findAll({
             include: [{
                 model: Product,
-                attributes: ['id', 'product_name', 'price', 'stock'],
             }]
         })
         .then(data => {
@@ -24,7 +23,6 @@ router.get('/:id', (req, res) => {
     Category.findByPk(id, {
             include: [{
                 model: Product,
-                attributes: ['id', 'product_name', 'price', 'stock']
             }]
         })
         .then(data => {
