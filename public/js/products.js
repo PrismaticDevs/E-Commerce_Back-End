@@ -17,7 +17,7 @@ async function getProducts() {
                 // Appends elements
                 $ul.appendChild($li).classList.add('list-group-item');
                 $li.appendChild($p);
-                $p.textContent = product.product_name + ' $' + product.price;
+                $p.innerHTML = product.product_name + ' $' + product.price;
             });
             // Appends list
             $products.appendChild($ul);
