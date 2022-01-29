@@ -51,6 +51,9 @@ router.put('/:id', (req, res) => {
                 id: req.params.id,
             },
         })
+        .then((category) => {
+            Category.findByPk(id).then(data => res.json(data));
+        })
         .catch((err) => {
             res.status(400).json(err);
         });
@@ -62,7 +65,7 @@ router.delete('/:id', (req, res) => {
             where: { id: req.params.id }
         })
         .then(data => {
-            res.json(req.params.category_name + ' deleted from categories');
+            res.json(req.body.category_name + ' deleted from categories');
         });
 });
 

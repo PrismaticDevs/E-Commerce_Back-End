@@ -14,6 +14,7 @@ async function getProducts() {
                 // Creates list elements
                 const $li = document.createElement('li');
                 const $p = document.createElement('p');
+                const $button = document.createElement('button');
                 // Appends elements
                 $ul.appendChild($li).classList.add('list-group-item');
                 $li.appendChild($p);
