@@ -4,6 +4,7 @@
 
 - [License](#license)
 - [Description](#description)
+- [Video](#video)
 - [Installation](#installation)
 - [Usage](#instructions)
 - [Contributors](#contributors)
@@ -17,6 +18,10 @@
 ## Description
 
 This application uses a MySQL database to perform CRUD operations on an e-commerce site's products.
+
+## Video
+
+<a href="">Click for video</a>
 
 ## Installation
 
