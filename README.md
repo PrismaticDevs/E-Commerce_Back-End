@@ -21,7 +21,7 @@ This application uses a MySQL database to perform CRUD operations on an e-commer
 
 ## Video
 
-<a href="">Click for video</a>
+<a href="" target="_blank">Click for video</a>
 
 ## Installation
 
