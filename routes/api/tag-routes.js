@@ -28,13 +28,13 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     // create a new tag
-    Tag.create({ tag_name: req.body.tag_name })
+    Tag.create(req.body)
         .then((tag) => {
             res.status(200).json(tag);
         })
         .catch(e => {
             res.status(400).json(e);
-        })
+        });
 });
 
 router.put('/:id', (req, res) => {

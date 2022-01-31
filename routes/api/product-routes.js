@@ -109,8 +109,11 @@ router.delete('/:id', (req, res) => {
     Product.destroy({
             where: { id: req.params.id }
         })
-        .then(data => {
-            res.json(req.params.product_id, ' deleted');
+        .then((product) => {
+            res.json(`Product ${req.params.id} deleted`)
+        })
+        .catch((err) => {
+            res.status(400).json(err);
         })
 });
 
